@@ -46,7 +46,7 @@ BlynkTimer timer;
 
 // V1 LED Widget is blinking
 void blinkLedWidget()
-{
+{                                       //*** HERE WE ARE CONTROLLING THE LED ***
   if (led1.getValue()) {
     led1.off();
     Serial.println("LED on V1: off");
@@ -80,7 +80,7 @@ int counter=0;
 void loop()
 {
   Blynk.run();
-  timer.run();
+  timer.run();                          //*** HERE IS THE TEMPERATURE CODE ***
   int sensorValue = analogRead(A0);
   float volt = (sensorValue/1024.0) * 5;
   tempC = (volt - 0.5) * 100;
